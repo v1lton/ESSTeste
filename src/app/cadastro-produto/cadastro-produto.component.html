@@ -1,0 +1,41 @@
+<h1>Cadastro de produtos</h1>
+
+<div class="inputs elements">
+
+    <div class="inputs">
+        <p>
+            Nome do produto
+            <input type="text" name="name" [(ngModel)]="name" placeholder="Digite o nome do produto"><br>
+        </p>
+        <p>
+            ID do produto
+            <input type="text" name="id" [(ngModel)]="product_id" placeholder="Digite o ID do produto"><br>
+        </p>
+        <p>
+            Valor do produto (R$)
+            <input type="number" name="value" [(ngModel)]="value" placeholder="Digite o valor do produto"><br>
+        </p>
+    </div>
+
+    <div class="button">
+        <p><button class="confirmationButton" (click)="createProduct()"> Cadastrar Produto </button></p>
+    </div>
+
+</div>
+
+<div class="clients list">
+
+    <ul *ngFor="let productName of products, let index = index">
+        <li *ngIf="!isEditingProduct">
+            {{ productName }} 
+            <button class="editButton" (click)="toggleIsEditingProduct()"> Editar Produto </button>
+            <button class="deleteButton"> Excluir Produto </button>
+         </li>
+
+         <li *ngIf="isEditingProduct">
+            <input type="text" name="editingProduct" [(ngModel)]="products[index]">
+            <button class="saveChanges" (click)="toggleIsEditingProduct()"> Salvar Modificações </button>
+        </li>
+        
+    </ul>
+</div>
