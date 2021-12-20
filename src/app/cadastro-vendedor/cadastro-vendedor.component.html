@@ -1,0 +1,50 @@
+<h1>Cadastro de Vendedor</h1>
+
+<div class="inputs elements">
+    
+
+    <div class="inputs">
+        <p>
+            Nome
+            <input type="text" name="nome" [(ngModel)]="name" placeholder="Digite seu nome completo">
+        </p>
+        <p>
+            CPF
+            <input type="text" name="cpf" [(ngModel)]="cnpj" placeholder="Digite seu CPF">
+        </p>
+        <p>
+            E-mail
+            <input type="text" name="e-mail" [(ngModel)]="email" placeholder="Digite seu e-mail">
+        </p>
+        <p>
+            Endereço
+            <input type="text" name="endereco" [(ngModel)]="address" placeholder="Digite seu endereço">
+        </p>
+        <p>
+            Telefone
+            <input type="text" name="telefone" [(ngModel)]="contact_number" placeholder="Digite seu telefone"><br>
+        </p>
+        <p>
+            Senha
+            <input type="password" name="senha" [(ngModel)]="password" placeholder="Digite sua senha"><br>
+        </p>
+        <p>
+            Confirmar senha
+            <input type="password" name="senhaConfirmar" [(ngModel)]="password_confirm" placeholder="Digite sua senha"><br>
+        </p>
+    </div>
+
+    <div class="buttons">
+        <p><button class="confirmationButton" (click)="createSeller()"> Cadastrar Usuário </button></p>
+        <p><button class="toLoginButton"> Já sou cadastrado </button></p>
+    </div>
+
+</div>
+
+<div class="sellers list">
+    <ul *ngFor="let name of sellers">
+        <li> <p> {{ name }} </p></li>
+    </ul>
+</div>
+
+
